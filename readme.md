@@ -2,8 +2,6 @@
 
 A self-contained lab environment for demonstrating brute-force credential testing using [Brutus](https://github.com/praetorian-inc/brutus), a modern Hydra alternative written in Go.
 
-Built as part of KYBS2001 – Introductory Penetration Testing course extra activities assignment.
-
 ---
 
 ## What This Lab Does
