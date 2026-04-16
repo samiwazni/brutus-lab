@@ -1,0 +1,9 @@
+admin
+root
+user
+ftpuser
+dbuser
+test
+administrator
+ubuntu
+deploy

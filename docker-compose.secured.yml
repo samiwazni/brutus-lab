@@ -1,0 +1,45 @@
+version: "3.8"
+
+services:
+
+  ssh-target:
+    image: linuxserver/openssh-server
+    container_name: brutus-ssh-secured
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - PASSWORD_ACCESS=true
+      - USER_NAME=admin
+      - USER_PASSWORD=X7!kP#9mQzL2@vR5
+    ports:
+      - "2222:2222"
+    networks:
+      - brutus-net
+
+  ftp-target:
+    image: garethflowers/ftp-server
+    container_name: brutus-ftp-secured
+    environment:
+      - FTP_USER=ftpuser
+      - FTP_PASS=Yh3$nW8@qK5!mJ2x
+    ports:
+      - "21:21"
+    networks:
+      - brutus-net
+
+  mysql-target:
+    image: mysql:5.7
+    container_name: brutus-mysql-secured
+    environment:
+      - MYSQL_ROOT_PASSWORD=Zp6#tR9@wN4!kM7y
+      - MYSQL_USER=dbuser
+      - MYSQL_PASSWORD=Bv2$sQ8@jL5!nH3m
+      - MYSQL_DATABASE=testdb
+    ports:
+      - "3306:3306"
+    networks:
+      - brutus-net
+
+networks:
+  brutus-net:
+    driver: bridge
